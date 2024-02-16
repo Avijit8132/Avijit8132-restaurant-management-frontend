@@ -1,0 +1,63 @@
+/* for whole notification component */
+.notification-area {
+    border-radius: 0.5rem;
+    max-height: 31rem;
+    left: auto;
+    position: absolute;
+    right: 4.2rem;
+    top: 4.4rem;
+    min-width: 33.2rem;
+    max-width: 33.2rem;
+    z-index: 10;
+  }
+  
+  /* for each notification  not viewed */
+  .notviewed {
+    padding: 1rem;
+    border: 1px solid #cfdae0;
+    background-color: #ffffff;
+  }
+  
+  /* for each notification viewed */
+  .viewed {
+    padding: 1rem;
+    border: 1px solid #cfdae0;
+    background-color: #f2f2f2;
+  }
+  
+  /* to override default padding from alert bootstrap class */
+  .alert-dismissible {
+    padding: 0rem !important;
+  }
+  
+  /* To add border for alert tag */
+  .alert-border {
+    border: 1px solid #b6b6b6;
+    border-radius: 0.5rem;
+  }
+  
+  .alert-heading {
+    font-weight: 600;
+    padding: 0.7rem;
+  }
+  
+  hr {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .notifications-container {
+    overflow-y: auto;
+    max-height: 31rem;
+  }
+  
+  .custom-icon {
+    color: green;
+    cursor: pointer;
+  }
+  
+  .sent-by-and-date {
+    padding-top: 0.16rem;
+    font-size: 0.9rem;
+  }
+  

@@ -1,0 +1,26 @@
+.info-pill-container {
+    align-items: center;
+    display: flex;
+}
+
+.info-pill-first-section {
+    padding: 0.4rem;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+    background-color: RGB(227, 30, 36);
+    border-top-left-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
+    color: white;
+    font-weight: bold;
+}
+
+.info-pill-second-section {
+    padding: 0.4rem;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+    color: white;
+    font-weight: bold;
+    background-color:#9F151D    ;
+    border-top-right-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+}

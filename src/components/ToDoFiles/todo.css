@@ -1,0 +1,20 @@
+.square {
+    display: flex;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 5px;
+  }
+
+div.vertical-line{
+  width: 1px; 
+  background-color:#00000080; 
+  height: 80%; 
+  float: center; 
+  opacity: 20%;
+}
+
+.checked {
+  text-decoration: line-through;
+  opacity: 50%;
+}
