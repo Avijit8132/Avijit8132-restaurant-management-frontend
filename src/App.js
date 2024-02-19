@@ -55,6 +55,9 @@ import PdfBuilder from "./components/PdfBuilder/PdfBuilder";
 import data from "./components/NewJson";
 import EnquirytableList from "./components/Enquirytable/EnquirytableList";
 import EnquirytableView from "./components/Enquirytable/EnquirytableView";
+import TableList from "./components/Table/TableList";
+import TableEdit from "./components/Table/TableEdit";
+import TableView from "./components/Table/TableView";
 
 function App() {
   const [modalShow, setModalShow] = useState(false);
@@ -853,7 +856,52 @@ function App() {
             }
           />
 
-        </Routes>
+<Route
+            path="/table/e"
+            element={
+              <>
+                <div className="wrapper">
+                  <Sidebar />
+                  <div id="content">
+                    <Header />
+                    <TableEdit />
+                  </div>
+                </div>
+              </>
+            }
+          />
+<Route
+            path="/tables"
+            element={
+              <>
+                <div className="wrapper">
+                  <Sidebar />
+                  <div id="content">
+                    <Header />
+                      <TableList /> 
+                  </div>
+                </div>
+              </>
+            }
+          />
+
+
+        <Route
+            path="/tables/:id"
+            element={
+              <>
+                <div className="wrapper">
+                  <Sidebar />
+                  <div id="content">
+                    <Header />
+                    <TableView />
+                  </div>
+                </div>
+              </>
+            }
+            />
+        
+            </Routes>
       </Router>
     </>
   );

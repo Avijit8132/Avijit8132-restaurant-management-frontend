@@ -34,7 +34,7 @@ const Sidebar = () => {
       <nav id="sidebar" className="">
         <div className="sidebar-header text-center">
           <div className="pb-1">
-            <img src='/restaurant.webp' />
+            <img src='/aa.png' />
           </div>
         </div>
 
@@ -95,22 +95,22 @@ const Sidebar = () => {
 
          
 
-          {/* {permissions &&
+          {permissions &&
           (permissions.indexOf(constants.VIEW_PROPERTY) >= 0 ||
             permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
             <li
               className={`${
-                location.pathname.includes("/properties") ? "active" : ""
+                location.pathname.includes("/tables") ? "active" : ""
               }`}
             >
-              <Link to="/properties">
+              <Link to="/tables">
                 {" "}
-                <i  className={`fa-solid fa-building mx-2 ${location.pathname.includes("/properties") ? "active" : "inactive"}`}></i> Inventory
+                <i  className={`fa-solid fa-building mx-2 ${location.pathname.includes("/tables") ? "active" : "inactive"}`}></i> Table
               </Link>
             </li>
           ) : (
             ""
-          )} */}
+          )}
 
 
           {/* {permissions &&
@@ -250,7 +250,7 @@ const Sidebar = () => {
             >
               <img
                 style={{ width: "200px", paddingTop: "1rem" }}
-                src="/aa.png "
+                src="/restaurant.webp "
               />
             </div>
           </li>

@@ -2380,6 +2380,107 @@ const inventoryApi = {
     }
     return null;
   },
+
+//Table Inventory
+async fetchTable() {
+  const token = localStorage.getItem("token");
+  let response = await fetch(constants.API_BASE_URL + "/api/tables", {
+    method: "GET",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token,
+    },
+  });
+
+  if (response.status === 401) {
+    authApi.logout();
+  }
+  const result = await response.json();
+  //.log(result);
+  if (result.length > 0) {
+    return result;
+  }
+  return null;
+},
+
+  //.............. Fetch Table By Id .............................
+async fetchTables(id) {
+  //.log(id);
+  const token = localStorage.getItem("token");
+  let response = await fetch(constants.API_BASE_URL + "/api/tables/" + id, {
+    method: "GET",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token,
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+  });
+  const result = await response.json();
+
+  return result;
+},
+
+ async createTable(table) {
+  ////.log('if contact create call');
+  ////.log(contact);
+  const token = localStorage.getItem("token");
+
+  let response = await fetch(constants.API_BASE_URL + "/api/tables", {
+    method: "POST",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token,
+    },
+    body: JSON.stringify(table),
+  });
+  //.log(response);
+  return await response.json();
+},
+
+
+  /********************************** Save Table*************************** */
+
+async saveTable(table) {
+  //.log("====Save contact===");
+  const token = localStorage.getItem("token");
+  let response = await fetch(
+    constants.API_BASE_URL + "/api/tables/" + table.id,
+    {
+      method: "PUT",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+      body: JSON.stringify(table),
+    }
+  );
+  //.log(response);
+  return await response.json();
+},
+
+
+  /********************************** delete Table*************************** */
+
+async deleteTable(id) {
+  const token = localStorage.getItem("token");
+  let response = await fetch(constants.API_BASE_URL + "/api/tables/" + id, {
+    method: "DELETE",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token,
+    },
+  });
+
+  return await response.json();
+},
+
 };
+
+
 
 export default inventoryApi;

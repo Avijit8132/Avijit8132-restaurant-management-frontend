@@ -584,7 +584,7 @@ map > area {
 .inputbox input[type="number"],
 .inputbox input[type="date"],
 .inputbox input[as="select"],
-/* .inputbox input[ type="textarea"], */
+.inputbox input[ type="textarea"],
 select {
   width: 80%;
   padding: 8px;
