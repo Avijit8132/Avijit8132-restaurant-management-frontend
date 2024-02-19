@@ -169,14 +169,14 @@ const ContactView = (props) => {
                     {contact.salutation} {contact.firstname} {contact.lastname}
                   </span>
                 </Col>
-                <Col lg={6}>
+                {/* <Col lg={6}>
                   <label>Contact Type</label>
                   <span>{contact.type}</span>
-                </Col>
-                <Col lg={6}>
+                </Col> */}
+                {/* <Col lg={6}>
                   <label>Title</label>
                   <span>{contact.title}</span>
-                </Col>
+                </Col> */}
 
                 <Col lg={6}>
                   <label>Email</label>
@@ -186,7 +186,7 @@ const ContactView = (props) => {
                   <label>Phone</label>
                   <span>{contact.phone}</span>
                 </Col>
-                <Col lg={6}>
+                {/* <Col lg={6}>
                   <label>Street</label>
                   <span>{contact.street}</span>
                 </Col>
@@ -205,7 +205,7 @@ const ContactView = (props) => {
                 <Col lg={6}>
                   <label>Country</label>
                   <span>{contact.country}</span>
-                </Col>
+                </Col> */}
                 <Col lg={6}>
                   <label>Created By</label>
                   <span>{contact.createdbyname}</span>

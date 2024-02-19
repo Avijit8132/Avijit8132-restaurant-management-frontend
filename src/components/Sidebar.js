@@ -34,7 +34,7 @@ const Sidebar = () => {
       <nav id="sidebar" className="">
         <div className="sidebar-header text-center">
           <div className="pb-1">
-            <img src='/sthapathya-logo.png' />
+            <img src='/restaurant.webp' />
           </div>
         </div>
 
@@ -57,7 +57,7 @@ const Sidebar = () => {
               </Link>
             </li>
      
-          {permissions &&
+          {/* {permissions &&
           (permissions.indexOf(constants.VIEW_LEAD) >= 0 ||
             permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
               <li className={`${location.pathname.includes("/leads") ? "active" : ""}`}>
@@ -68,7 +68,7 @@ const Sidebar = () => {
             </li>
           ) : (
             ""
-          )}
+          )} */}
           
           {permissions &&
           (permissions.indexOf(constants.VIEW_CONTACT) >= 0 ||
@@ -95,7 +95,7 @@ const Sidebar = () => {
 
          
 
-          {permissions &&
+          {/* {permissions &&
           (permissions.indexOf(constants.VIEW_PROPERTY) >= 0 ||
             permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
             <li
@@ -110,20 +110,10 @@ const Sidebar = () => {
             </li>
           ) : (
             ""
-          )}
+          )} */}
 
-          <li
-            className={`${location.pathname.includes("/sitevisit") ? "active" : ""
-              }`}
-          >
-            <Link to="/sitevisit">
-              {" "}
-              &nbsp;             
-              <i  className={`fa-solid fa-map-location-dot ${location.pathname.includes("/sitevisit") ? "active" : "inactive"}`}></i> &nbsp; Site Visit
-            </Link>
-          </li>
 
-          {permissions &&
+          {/* {permissions &&
           (permissions.indexOf(constants.VIEW_PROPERTY) >= 0 ||
             permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
             <li
@@ -138,9 +128,9 @@ const Sidebar = () => {
             </li>
           ) : (
             ""
-          )}
+          )} */}
 
-         {permissions &&
+         {/* {permissions &&
           (permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
           <li
             className={`${
@@ -154,8 +144,8 @@ const Sidebar = () => {
           </li>
           ) : (
             ""
-          )}
-
+          )} */}
+{/* 
         {permissions &&
           (permissions.indexOf(constants.VIEW_PROPERTY) >= 0 ||
             permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
@@ -171,8 +161,8 @@ const Sidebar = () => {
             </li>
           ) : (
             ""
-          )}
-
+          )} */}
+{/* 
           {permissions &&
           (permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
             <li
@@ -187,9 +177,9 @@ const Sidebar = () => {
             </li>
           ) : (
             ""
-          )}
+          )} */}
 
-          {permissions &&
+          {/* {permissions &&
           (permissions.indexOf(constants.VIEW_CONTACT) >= 0 ||
             permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
             <li
@@ -204,7 +194,7 @@ const Sidebar = () => {
             </li>
           ) : (
             ""
-          )}
+          )} */}
 
           {permissions &&
           ( permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
@@ -222,7 +212,7 @@ const Sidebar = () => {
             ""
           )}
 
-          {permissions &&
+          {/* {permissions &&
           (permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
             <li
               className={`${
@@ -236,17 +226,9 @@ const Sidebar = () => {
             </li>
           ) : (
             ""
-          )}
+          )} */}
 
-          <li
-            className={`${
-              location.pathname.includes("/Todo") ? "active" : ""
-            }`}
-          >
-            <Link to="/Todo">
-              <i className={`fa-solid fa-list mx-2 ${location.pathname.includes("/Todo") ? "active" : "inactive"}`}></i> To-Do
-            </Link>
-          </li>
+
 
           <li
             className={`${
@@ -259,21 +241,7 @@ const Sidebar = () => {
             </Link>
           </li>
 
-          {permissions &&
-          (permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
-          <li
-            className={`${
-              location.pathname.includes("/importdata") ? "active" : ""
-            }`}
-          >
-            <Link to="/importdata">
-              {" "}
-              <i className={`fa fa-file-import mx-2 ${location.pathname.includes("/importdata") ? "active" : "inactive"}`} ></i>Data Mining
-            </Link>
-          </li>
-          ) : (
-            ""
-          )}
+
 
           <li>
             <div
@@ -281,8 +249,8 @@ const Sidebar = () => {
               style={{  color: "#fff", textAlign: "center" }}
             >
               <img
-                style={{ width: "150px", paddingTop: "1rem" }}
-                src="/sidebar-black.png"
+                style={{ width: "200px", paddingTop: "1rem" }}
+                src="/aa.png "
               />
             </div>
           </li>

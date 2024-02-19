@@ -129,24 +129,6 @@ const ContactEdit = (props) => {
                     </Button>
                   </Col>
                 </Row>
-                <Row>
-                  <Col className="mx-3" lg={6}>
-                    <label name> Contact Type </label>
-                    <Field
-                      as="select"
-                      name="type"
-                      value={values.type}
-                      onChange={handleChange}
-                    >
-                      <option value="">--Select--</option>
-                      <option value="Property Owner">Property Owner</option>
-                      <option value="Buyer">Buyer</option>
-                      <option value="Seller">Seller</option>
-                      <option value="Agent">Agent</option>
-                      <option value="Staff">Staff</option>
-                    </Field>
-                  </Col>
-                </Row>
                 <Row className="align-items inputbox">
                   <Col lg={4}>
                     <label>Salutation</label>
@@ -203,24 +185,6 @@ const ContactEdit = (props) => {
                   </Col>
                 </Row>
                 <Row className="align-items">
-                  <Col lg={4}>
-                    <label>Title</label>
-                    <Field
-                      as="select"
-                      name="title"
-                      value={values.title}
-                      onChange={handleChange}
-                    >
-                      <option value="">--Select--</option>
-                      <option value="CEO">CEO</option>
-                      <option value="Director">Director</option>
-                      <option value="Manager">Manager</option>
-                      <option value="Owner">Owner</option>
-                      <option value="Partner">Partner</option>
-                      <option value="Executive">Executive</option>
-                      <option value="Other">Other</option>
-                    </Field>
-                  </Col>
                   <Col>
                     <label>Email </label>
                     <Field
@@ -256,89 +220,6 @@ const ContactEdit = (props) => {
                   </Col>
                 </Row>
                 <br/>
-                <Row className="align-items">
-                  <Col lg={14} className="section-header" style={{marginLeft:"2px"}}>
-                  <h5 style={{marginTop:"5px",marginLeft:"4px"}}>Address Information</h5>
-                  </Col>
-
-                  <Col lg={6}>
-                    <label>State</label>
-                    <Field
-                      as="select"
-                      name="state"
-                      value={values.state}
-                      onChange={(event) => {
-                        var temp = CityState.filter(
-                          (ele) => ele.state === event.target.value
-                        );
-                        setCityList(temp.sort());
-                        handleChange(event);
-                      }}
-                    >
-                      <option value="">--Select State--</option>
-                      {stateList &&
-                        stateList.map((state) => (
-                          <option value={state}>{state}</option>
-                        ))}
-                    </Field>
-                  </Col>
-                  <Col lg={6}>
-                    <label>City</label>
-                    <Field
-                      as="select"
-                      name="city"
-                      value={values.city}
-                      onChange={handleChange}
-                    >
-                      <option value="">--Select City--</option>
-                      {cityList.length > 0 &&
-                        cityList.map((ele) => (
-                          <option value={ele.name}>{ele.name}</option>
-                        ))}
-                      {cityList.length === 0 &&
-                       
-                          <option value='Jaipur'>Jaipur</option>
-                        }
-                    </Field>
-                  </Col>
-
-                  <Col lg={6}>
-                    <label>Street</label>
-                    <Field
-                      type="text"
-                      name="street"
-                      placeholder="Enter street"
-                      value={values.street}
-                      onChange={handleChange}
-                    />
-                  </Col>
-                  <Col lg={6}>
-                    <label> Pincode </label>
-                    <Field
-                      type="number"
-                      className="no-arrows"
-                      name="pincode"
-                      placeholder="Enter pincode"
-                      value={values.pincode}
-                      onChange={handleChange}
-                    />
-                    <ErrorMessage
-                      name="pincode"
-                      component="div"
-                      className="error-message"
-                    />
-                  </Col>
-                  <Col lg={6}>
-                    <label>Country </label>
-                    <Field
-                      type="text"
-                      name="country"
-                      defaultValue={"India"}
-                      value={values.country}
-                      onChange={handleChange}
-                    />
-                  </Col>
-                </Row>
               </Form>
             )}
           </Formik>

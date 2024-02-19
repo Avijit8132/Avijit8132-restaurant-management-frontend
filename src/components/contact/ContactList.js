@@ -71,24 +71,23 @@ const ContactList = () => {
     },
     
     { title: "Email", prop: "email", isFilterable: true },
-    { title: "Contact Type", prop: "type", isFilterable: true },
     { title: "Phone", prop: "phone", isFilterable: true },
     
-    {
-      title: "Address",
-      prop: "address",
-      isSortable: true,
-      isFilterable: true,
-      cell: (row) => (
-        <span>
-          <div className="address">{`${
-            row.street != null && row.street !== "" ? row.street + "," : ""
-          } ${row.city != null && row.city !== "" ? row.city + "," : ""} ${
-            row.pincode != null && row.pincode !== "" ? row.pincode + "," : ""
-          } ${row.state != null ? row.state : ""}`}</div>
-        </span>
-      ),
-    },
+    // {
+    //   title: "Address",
+    //   prop: "address",
+    //   isSortable: true,
+    //   isFilterable: true,
+    //   cell: (row) => (
+    //     <span>
+    //       <div className="address">{`${
+    //         row.street != null && row.street !== "" ? row.street + "," : ""
+    //       } ${row.city != null && row.city !== "" ? row.city + "," : ""} ${
+    //         row.pincode != null && row.pincode !== "" ? row.pincode + "," : ""
+    //       } ${row.state != null ? row.state : ""}`}</div>
+    //     </span>
+    //   ),
+    // },
   ];
 
   // Randomize data of the table columns.
@@ -150,7 +149,7 @@ const ContactList = () => {
                 lg={2}
                 className="mt-2"
               >
-                <Form.Group controlId="formBasicStatus">
+                {/* <Form.Group controlId="formBasicStatus">
                   <Form.Select
                     aria-label="Enter Type"
                     name="type"
@@ -163,7 +162,7 @@ const ContactList = () => {
                       </option>
                     ))}
                   </Form.Select>
-                </Form.Group>
+                </Form.Group> */}
               </Col>
               <Col
                 xs={4}
