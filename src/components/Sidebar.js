@@ -93,8 +93,6 @@ const Sidebar = () => {
             ""
           )}
 
-         
-
           {permissions &&
           (permissions.indexOf(constants.VIEW_PROPERTY) >= 0 ||
             permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
@@ -105,13 +103,12 @@ const Sidebar = () => {
             >
               <Link to="/tables">
                 {" "}
-                <i  className={`fa-solid fa-building mx-2 ${location.pathname.includes("/tables") ? "active" : "inactive"}`}></i> Table
+                <i  className={`fa-solid fa-building mx-2`}></i><span className={`fa-solid mx-2 ${location.pathname.includes("/tables") ? "active" : "inactive"}`}>Table</span>
               </Link>
             </li>
           ) : (
             ""
           )}
-
 
           {/* {permissions &&
           (permissions.indexOf(constants.VIEW_PROPERTY) >= 0 ||

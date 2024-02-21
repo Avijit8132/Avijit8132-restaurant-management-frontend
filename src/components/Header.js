@@ -135,7 +135,7 @@ const Header = (props) => {
               <Badge style={{ fontSize: ".9rem" }} bg="light" text="dark">
                 {userInfo.username}{" "}
               </Badge>
-              <Badge style={{ fontSize: ".9rem", background: "#fa6469",padding:'4px' }} bg="">
+              <Badge style={{ fontSize: ".9rem", background: "#EA670D",padding:'4px' }} bg="">
                 {userInfo.userrole}{" "}
               </Badge>{" "}
             </Nav.Link>
@@ -147,7 +147,7 @@ const Header = (props) => {
               <span className="mx-2" style={{ fontSize: ".9rem" }}>
                 Company
               </span>{" "}
-              <Badge style={{ fontSize: ".9rem", background: "#fa6469" }} bg="">
+              <Badge style={{ fontSize: ".9rem", background: "#EA670D" }} bg="">
                 {userInfo.companyname}{" "}
               </Badge>{" "}
             </Nav.Link>

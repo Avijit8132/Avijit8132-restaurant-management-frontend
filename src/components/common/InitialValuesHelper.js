@@ -1,4 +1,13 @@
 import moment from "moment";
+function tableEditInitialValues(table) {
+  return {
+    id: table.id,
+    name: table.name,
+    occupancy: table.occupancy,
+    status: table.status,
+    description: table.description
+  };
+}
 function contactEditInitialValues(contact) {
   return {
     id: contact.id,
@@ -418,6 +427,7 @@ function DailyTaskEditInitialValues(dailyTask) {
   };
 }
 export {
+  tableEditInitialValues,
   contactEditInitialValues,
   propertyEditInitialValues,
   leadEditInitialValues,

@@ -10,8 +10,8 @@ import PubSub from "pubsub-js";
 import { Field, Formik, ErrorMessage } from 'formik';
 import CityState from "../../constants/CityState.json";
 import CustomSeparator from "../Breadcrumbs/CustomSeparator";
-import { schemaContactEdit } from "../common/ValidateSchemaHelper";
-import { contactEditInitialValues } from "../common/InitialValuesHelper";
+import { schemaTableEdit } from "../common/ValidateSchemaHelper";
+import { tableEditInitialValues } from "../common/InitialValuesHelper";
 
 const TableEdit = (props) => {
   const [validated, setValidated] = useState(false);
@@ -19,7 +19,7 @@ const TableEdit = (props) => {
   const [stateList, setStateList] = useState(false);
   const [cities, setCities] = useState([]);
   const [cityList, setCityList] = useState([]);
-
+  
   useEffect(() => {
     var temp = [];
     CityState.map((ele) => {
@@ -35,21 +35,24 @@ const TableEdit = (props) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [tables, setTables] = useState(location.state ? location.state : {});
-  const handleSubmitSave = async (values) => {
+  console.log("location.state --> ",location.state);
+  console.log("tables --> ",tables);
 
-    console.log("values --> ",values);
+  const handleSubmitSave = async (values) => {
+  console.log("inide save");
 
     //========= Logic to perform Create or Edit ======
     let result2 = {};
     if (tables.id) {
       values.id =tables.id;
       result2 = await inventoryApi.saveTable(values);
-      if (result2.success) {
+      console.log("result",result2);
+      if (result2) {
         PubSub.publish("RECORD_SAVED_TOAST", {
           title: "Record Saved",
           message: "Record saved successfully",
         });
-        navigate(`/tables/${values.id}`, { state: values });
+        navigate(`/tables/${result2.id}`, { state: result2 });
       }
     } else {
       result2 = await inventoryApi.createTable(values);
@@ -72,8 +75,8 @@ const TableEdit = (props) => {
     <Container className="view-form inputbox">
       {location?.state?.id ? (
         <CustomSeparator
-          cmpListName="Contacts"
-          cmpViewName={tables.firstname + " " + tables.lastname}
+          cmpListName="Table"
+          cmpViewName={tables.name}
           currentCmpName="Edit"
           indexLength="2"
           indexViewLength="3"
@@ -92,9 +95,9 @@ const TableEdit = (props) => {
        
         <Col lg={12} className="ibs-form-section">
           <Formik
-            // validationSchema={schemaContactEdit()}
+            validationSchema={schemaTableEdit()}
             onSubmit={handleSubmitSave}
-            initialValues={contactEditInitialValues(tables)}
+            initialValues={tableEditInitialValues(tables)}
           >
             {({ handleSubmit, handleChange, values, touched, errors }) => (
               <Form
@@ -112,7 +115,7 @@ const TableEdit = (props) => {
                     {tables.id ? (
                       <>
                         Edit Table
-                        <h4>{tables.firstname + " " + tables.lastname}</h4>
+                        <h4>{tables.name}</h4>
                       </>
                     ) : (
                       "New Table"
@@ -165,7 +168,7 @@ const TableEdit = (props) => {
                   </Col>
                 </Row>
                 <Row className="align-items">
-                  <Col lg={4}>
+                  {/* <Col lg={4}>
                     <label>
                       Status 
                     </label>
@@ -183,7 +186,27 @@ const TableEdit = (props) => {
                       component="div"
                       className="error-message"
                     />
-                  </Col>
+                  </Col> */}
+                  <Col lg={4}>
+                  <Form.Label>Status</Form.Label>
+                  <Form.Select
+                    name="status"
+                    value={values.status}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">Select Status</option>
+                    <option value="open">Open</option>
+                    <option value="running">Running</option>
+                    <option value="reserved">Reserved</option>
+                  </Form.Select>
+                  <ErrorMessage
+                    name="status"
+                    component="div"
+                    className="error-message"
+                  />
+                </Col>
+
                   <Col lg={4}>
                     <label>
                     Description 

@@ -855,7 +855,20 @@ function App() {
               </>
             }
           />
-
+    <Route
+            path="/tables/:id/e"
+            element={
+              <>
+                <div className="wrapper">
+                  <Sidebar />
+                  <div id="content">
+                    <Header />
+                    <TableEdit />
+                  </div>
+                </div>
+              </>
+            }
+          />
 <Route
             path="/table/e"
             element={

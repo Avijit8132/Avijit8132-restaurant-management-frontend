@@ -2444,7 +2444,7 @@ async fetchTables(id) {
   /********************************** Save Table*************************** */
 
 async saveTable(table) {
-  //.log("====Save contact===");
+  console.log("====Save contact===");
   const token = localStorage.getItem("token");
   let response = await fetch(
     constants.API_BASE_URL + "/api/tables/" + table.id,

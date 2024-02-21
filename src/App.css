@@ -87,7 +87,7 @@ footer a {
 }
 
 .login-form i {
-  color: #e31e24;
+  color: #88ece7;
 }
 .login-section {
   border-left: 1px solid #ccc;
@@ -105,9 +105,9 @@ footer a {
 }
 
 .data-table th {
-  background-color: #fa6469  !important;
+  background-color: #023a3b  !important;
   color: #fff !important;
-  border: 1px solid #fa6469
+  border: 1px solid #f7f6f6
   ;
 }
 
@@ -226,7 +226,7 @@ th.fc-col-header-cell {
 }
 
 .circle-icon {
-  background: #ffc0c0;
+  background: #c0fffa;
   width: 100px;
   height: 100px;
   border-radius: 50%;

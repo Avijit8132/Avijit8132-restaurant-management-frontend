@@ -28,6 +28,19 @@ function schemaContactEdit() {
       .matches(/^\d{6}$/, MSG.VLDPINCODE_REQ)
     });
 }
+function schemaTableEdit() {
+  return yup.object().shape({
+  //salutation: yup.string(),
+  name: yup
+    .string()
+    .required(MSG.NAMEREQ),
+    occupancy: yup
+    .string()
+    .matches(NUM_REGEX, MSG.VALIDNOREQ)
+    .required(MSG.occupancyREQ),
+    status: yup.string().nullable().matches(NAME_REGEX, MSG.TYPEREQ),
+  });
+}
 function schemaPropertyEdit() {
     return yup.object().shape({
     name: yup.string().required(MSG.NAMEREQ),
@@ -559,5 +572,6 @@ export {
     schemaLeadInfo,
     schemaLeadAddress,
     schemaSiteVisitEdit,
-    schemaDailyTaskInfo
+    schemaDailyTaskInfo,
+    schemaTableEdit
 }

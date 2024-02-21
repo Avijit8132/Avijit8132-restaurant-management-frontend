@@ -25,5 +25,8 @@ export const MSG = {
     AREATYPEREQ : "Area type is required",
     UNITREQ:"Unit is required",
     VALUEREQ: "Value is required",
-    FLOORREQ: "Floor is required"
+    FLOORREQ: "Floor is required",
+    occupancyREQ:"Occupancy is required",
+    VALIDNOREQ: "occupancy should contain only number",
+    TYPEREQ :"Type is required"
 };

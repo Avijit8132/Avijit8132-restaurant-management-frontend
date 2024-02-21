@@ -76,16 +76,16 @@
 
 
 #sidebar ul li a:hover,#minisidebar ul li a:hover {
-    background: #FF7F7F;
+    background: #383d2b;
     color: #fff;
-    border:#FF7F7F 0.5px solid;
+    border:#f3e8e8 0.5px solid;
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: RGB(227, 30, 36);
-    border: RGB(227, 30, 36) 0.25px solid;
+    background: #884EA0 ;
+    border: #F8F9F9 0.25px solid;
     border-radius: .25rem;
 }
 
