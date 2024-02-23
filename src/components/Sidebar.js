@@ -109,89 +109,23 @@ const Sidebar = () => {
           ) : (
             ""
           )}
-
-          {/* {permissions &&
-          (permissions.indexOf(constants.VIEW_PROPERTY) >= 0 ||
-            permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
-            <li
-              className={`${
-                location.pathname.includes("/attendance") ? "active" : ""
-              }`}
-            >
-              <Link to="/attendance">
-                {" "}
-                <i  className={`far fa-calendar-check mx-2 ${location.pathname.includes("/attendance") ? "active" : "inactive"}`}></i> Attendance
-              </Link>
-            </li>
-          ) : (
-            ""
-          )} */}
-
-         {/* {permissions &&
-          (permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
-          <li
-            className={`${
-              location.pathname.includes("/enquiry") ? "active" : ""
-            }`}
-          >
-            <Link to="/enquiry">
-              {" "}
-              <i className={`fa fa-question-circle mx-2 ${location.pathname.includes("/enquiry") ? "active" : "inactive"}`}></i>Enquiry
-            </Link>
-          </li>
-          ) : (
-            ""
-          )} */}
-{/* 
+        
         {permissions &&
           (permissions.indexOf(constants.VIEW_PROPERTY) >= 0 ||
             permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
             <li
               className={`${
-                location.pathname.includes("/dailytasklist") ? "active" : ""
+                location.pathname.includes("/bookings") ? "active" : ""
               }`}
             >
-              <Link to="/dailytasklist">
+              <Link to="/bookings">
                 {" "}
-                <i  className={`fa-solid fa fa-tasks mx-2 ${location.pathname.includes("/dailytasklist") ? "active" : "inactive"}`} ></i> Daily Task
+                <i  className={`fa-solid fa-building mx-2`}></i><span className={`fa-solid mx-2 ${location.pathname.includes("/bookings") ? "active" : "inactive"}`}>Booking</span>
               </Link>
             </li>
           ) : (
             ""
-          )} */}
-{/* 
-          {permissions &&
-          (permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
-            <li
-              className={`${
-                location.pathname.includes("/transactions") ? "active" : ""
-              }`}
-            >
-              <Link to="/transactions">
-                <i  className={`fa fa-money mx-2 ${location.pathname.includes("/transactions") ? "active" : "inactive"}`}></i> Income /
-                Expense
-              </Link>
-            </li>
-          ) : (
-            ""
-          )} */}
-
-          {/* {permissions &&
-          (permissions.indexOf(constants.VIEW_CONTACT) >= 0 ||
-            permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
-            <li
-              className={`${
-                location.pathname.includes("/meetings") ? "active" : ""
-              }`}
-            >
-              <Link to="/meetings">
-                
-                <i className={`fa-solid fa-calendar-days mx-2 ${location.pathname.includes("/meetings") ? "active" : "inactive"}`} > </i> Meetings
-              </Link>
-            </li>
-          ) : (
-            ""
-          )} */}
+          )}
 
           {permissions &&
           ( permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
@@ -224,9 +158,7 @@ const Sidebar = () => {
           ) : (
             ""
           )} */}
-
-
-
+ 
           <li
             className={`${
               location.pathname.includes("/myprofile") ? "active" : ""

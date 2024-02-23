@@ -58,6 +58,9 @@ import EnquirytableView from "./components/Enquirytable/EnquirytableView";
 import TableList from "./components/Table/TableList";
 import TableEdit from "./components/Table/TableEdit";
 import TableView from "./components/Table/TableView";
+import BookingList from "./components/Booking/BookingList";
+import BookingView from "./components/Booking/BookingView";
+// import BookingEdit from "./components/Booking/BookingEdit";
 
 function App() {
   const [modalShow, setModalShow] = useState(false);
@@ -913,7 +916,34 @@ function App() {
               </>
             }
             />
-        
+        <Route
+            path="bookings/:id"
+            element={
+              <>
+                <div className="wrapper">
+                  <Sidebar />
+                  <div id="content">
+                    <Header />
+                    <BookingView />
+                  </div>
+                </div>
+              </>
+            }
+          />
+            <Route
+            path="/bookings"
+            element={
+              <>
+                <div className="wrapper">
+                  <Sidebar />
+                  <div id="content">
+                    <Header />
+                      <BookingList/> 
+                  </div>
+                </div>
+              </>
+            }
+            />
             </Routes>
       </Router>
     </>

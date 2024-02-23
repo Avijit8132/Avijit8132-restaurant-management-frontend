@@ -20,26 +20,6 @@ const inventoryApi = {
     const result = await response.json();
     return result;
   },
-
-  //.............. Fetch Property By showonweb Id .............................
-  async findActiveProperty(id) {
-    const token = localStorage.getItem("token");
-    let response = await fetch(
-      constants.API_BASE_URL + "/api/properties/" + id + "/active",
-      {
-        method: "GET",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-      }
-    );
-    const result = await response.json();
-    return result;
-  },
-
   //************************ Contacts ***********************************//
   async fetchContacts() {
     const token = localStorage.getItem("token");
@@ -282,23 +262,7 @@ const inventoryApi = {
     return result;
   },
 
-  /********************************** CReate Property*************************** */
-  async createProperty(property) {
-    ////.log('if contact create call');
-    ////.log(property);
-    const token = localStorage.getItem("token");
-    let response = await fetch(constants.API_BASE_URL + "/api/properties", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-      body: JSON.stringify(property),
-    });
-    ////.log(response);
-    return await response.json();
-  },
+ 
 
   /********************************** CReate Project*************************** */
   async createProject(project) {
@@ -356,27 +320,6 @@ const inventoryApi = {
     //.log(response);
     return await response.json();
   },
-
-  /********************************** Save Property*************************** */
-  async saveProperty(property) {
-    //.log("if edit save contact call");
-    const token = localStorage.getItem("token");
-    let response = await fetch(
-      constants.API_BASE_URL + "/api/properties/" + property.id,
-      {
-        method: "PUT",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
-        body: JSON.stringify(property),
-      }
-    );
-    ////.log(response);
-    return await response.json();
-  },
-
   /********************************** Save Project*************************** */
 
   async saveProject(project) {
@@ -428,96 +371,6 @@ const inventoryApi = {
     });
 
     return await response.json();
-  },
-
-  //************************ Lead ***********************************//
-
-  async fetchLeads() {
-    const token = localStorage.getItem("token");
-    let response = await fetch(constants.API_BASE_URL + "/api/leads", {
-      method: "GET",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    });
-
-    if (response.status === 401) {
-      authApi.logout();
-    }
-
-    const result = await response.json();
-    if (result.length > 0) {
-      return result;
-    }
-    return null;
-  },
-
-  async fetchLead(id) {
-    const token = localStorage.getItem("token");
-    let response = await fetch(constants.API_BASE_URL + "/api/leads/" + id, {
-      method: "GET",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    });
-    const result = await response.json();
-
-    return result;
-  },
-
-  async fetchLeadsTask() {
-    const token = localStorage.getItem("token");
-    let response = await fetch(constants.API_BASE_URL + "/api/tasks/task-for-leads/", {
-      method: "GET",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    });
-
-    if (response.status === 401) {
-      authApi.logout();
-    }
-
-    const result = await response.json();
-    if (result.length > 0) {
-      return result;
-    }
-    return null;
-  },
-
-  //************************ Prperty ***********************************//
-
-  async fetchProperties() {
-    const token = localStorage.getItem("token");
-    let response = await fetch(constants.API_BASE_URL + "/api/properties", {
-      method: "GET",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    });
-
-    if (response.status === 401) {
-      authApi.logout();
-    }
-
-    const result = await response.json();
-
-    if (result.length > 0) {
-      return result;
-    }
-    return null;
   },
 
   //************************ Project ***********************************//
@@ -592,32 +445,6 @@ const inventoryApi = {
 
     return result;
   },
-
-  /******************************** Property***************** */
-
-  async fetchProperty(id) {
-    const token = localStorage.getItem("token");
-    let response = await fetch(
-      constants.API_BASE_URL + "/api/properties/" + id,
-      {
-        method: "GET",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-      }
-    );
-
-    if (response.status === 401) {
-      authApi.logout();
-    }
-    const result = await response.json();
-
-    return result;
-  },
-
   //----------------------------------ReletedProperties-----------------------------------
   async findByOwnerId(id) {
     const token = localStorage.getItem("token");
@@ -658,126 +485,6 @@ const inventoryApi = {
     return result;
   },
 
-  async createLead(lead) {
-    //.log('if data enter', lead,constants.API_BASE_URL + "/api/leads");
-    const token = localStorage.getItem("token");
-    let response = await fetch(constants.API_BASE_URL + "/api/leads", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-      body: JSON.stringify(lead),
-    });
-    //.log('response in lead',response)
-    return await response.json();
-  },
-  // ******************************create product ***************************************
-  async createProduct(product) {
-    ////.log('if product create call');
-    ////.log(product);
-    const token = localStorage.getItem("token");
-    let response = await fetch(constants.API_BASE_URL + "/api/products", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-      body: JSON.stringify(product),
-    });
-    ////.log(response);
-    return await response.json();
-  },
-
-  async saveLead(lead) {
-    ////.log('Enter lead data',lead)
-    const token = localStorage.getItem("token");
-    //.log('values in inv',lead);
-    let response = await fetch(
-      constants.API_BASE_URL + "/api/leads/" + lead.id,
-      {
-        method: "PUT",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
-        body: JSON.stringify(lead),
-      }
-    );
-   const result = await response.json();
-   //.log('result',result)
-
-   return result;
-  },
-
-  //*************************************save Product********************************************* */
-  async saveProduct(product) {
-    ////.log('if edit enter for save')
-    const token = localStorage.getItem("token");
-    let response = await fetch(
-      constants.API_BASE_URL + "/api/products/" + product.id,
-      {
-        method: "PUT",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
-        body: JSON.stringify(product),
-      }
-    );
-    ////.log(response)
-    return await response.json();
-  },
-  // ***********************Product************************************//
-  async fetchProduct() {
-    const token = localStorage.getItem("token");
-    let response = await fetch(constants.API_BASE_URL + "/api/products", {
-      method: "GET",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-    });
-    const result = await response.json();
-    ////.log(result)
-    if (result.length > 0) {
-      return result;
-    }
-    return null;
-  },
-
-  async deleteProduct(id) {
-    const token = localStorage.getItem("token");
-    let response = await fetch(constants.API_BASE_URL + "/api/products/" + id, {
-      method: "DELETE",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-    });
-    return await response.json();
-  },
-
-  async deleteLead(id) {
-    ////.log('delete enter in inventory')
-    const token = localStorage.getItem("token");
-    let response = await fetch(constants.API_BASE_URL + "/api/leads/" + id, {
-      method: "DELETE",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-    });
-    ////.log(response)
-    return await response.json();
-  },
   //************** order **************** */
   async deleteOrder(id) {
     const token = localStorage.getItem("token");
@@ -2459,6 +2166,7 @@ async saveTable(table) {
     }
   );
   //.log(response);
+//Booking ------------------------
   return await response.json();
 },
 
@@ -2478,6 +2186,97 @@ async deleteTable(id) {
 
   return await response.json();
 },
+//------------------------------------booking----------------------------------
+async fetchBookings() {
+  const token = localStorage.getItem("token");
+  let response = await fetch(constants.API_BASE_URL + "/api/bookings", {
+    method: "GET",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token,
+    },
+  });
+
+  if (response.status === 401) {
+    authApi.logout();
+  }
+  const result = await response.json();
+  //.log(result);
+  if (result.length > 0) {
+    return result;
+  }
+  return null;
+},
+async fetchBooking(id) {
+  //.log(id);
+  const token = localStorage.getItem("token");
+  let response = await fetch(constants.API_BASE_URL + "/api/bookings/" + id, {
+    method: "GET",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token,
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+  });
+  const result = await response.json();
+
+  return result;
+},
+
+ async createBooking(booking) {
+  ////.log('if contact create call');
+  ////.log(contact);
+  const token = localStorage.getItem("token");
+
+  let response = await fetch(constants.API_BASE_URL + "/api/bookings", {
+    method: "POST",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token,
+    },
+    body: JSON.stringify(booking),
+  });
+  //.log(response);
+  return await response.json();
+},
+
+async saveBooking(booking) {
+  //.log("====Save contact===");
+  const token = localStorage.getItem("token");
+  let response = await fetch(
+    constants.API_BASE_URL + "/api/bookings/" + booking.id,
+    {
+      method: "PUT",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+      body: JSON.stringify(booking),
+    }
+  );
+  //.log(response);
+  return await response.json();
+},
+
+async deleteBooking(id) {
+  const token = localStorage.getItem("token");
+  let response = await fetch(constants.API_BASE_URL + "/api/bookings/" + id, {
+    method: "DELETE",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token,
+    },
+  });
+
+  return await response.json();
+},
+
+
 
 };
 
