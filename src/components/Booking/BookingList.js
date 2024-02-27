@@ -71,7 +71,6 @@ const BookingList = () => {
       ),
     },
     
-    { title: "Status", prop: "status", isFilterable: true },
     { title: "Table Name", prop: "table_name", isFilterable: true },
     { title: "Contact Name", prop: "contact_name", isFilterable: true },
     { title: "Numberofperson", prop: "numberofperson", isFilterable: true },
@@ -82,8 +81,8 @@ const BookingList = () => {
     beforeSelect: " ",
   };
 
-  const createTable = () => {
-    navigate(`/table/e`);
+  const createBooking = () => {
+    navigate(`/booking/e`);
   };
 
   return (
@@ -167,7 +166,7 @@ const BookingList = () => {
                 <Button
                   className="btn-sm outline-primary"
                   variant="outline-primary"
-                  onClick={() => createTable(true)}
+                  onClick={() => createBooking(true)}
                 >
                   New Booking
                 </Button>

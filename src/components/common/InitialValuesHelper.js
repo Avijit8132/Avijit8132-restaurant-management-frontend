@@ -8,6 +8,15 @@ function tableEditInitialValues(table) {
     description: table.description
   };
 }
+
+function bookingEditInitialValues(booking) {
+  return {
+    id: booking.id,
+    contactid: booking.contactid,
+    occupancy: booking.tableid,
+    numberofperson: booking.numberofperson,
+  };
+}
 function contactEditInitialValues(contact) {
   return {
     id: contact.id,
@@ -437,4 +446,5 @@ export {
   leadAddressInitialValues,
   siteVisitInitialValues,
   DailyTaskEditInitialValues,
+  bookingEditInitialValues
 };

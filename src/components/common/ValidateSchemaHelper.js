@@ -41,6 +41,19 @@ function schemaTableEdit() {
     status: yup.string().nullable().matches(NAME_REGEX, MSG.TYPEREQ),
   });
 }
+
+function schemaBookingEdit() {
+  return yup.object().shape({
+  //salutation: yup.string(),
+  contactid: yup
+    .string()
+    .required(MSG.CONREQ),
+    tableid: yup
+    .string()
+    .required(MSG.TABLEREQ),
+    numberofperson: yup.string().nullable().matches(NUM_REGEX, MSG.NUUMBEREREQ),
+  });
+}
 function schemaPropertyEdit() {
     return yup.object().shape({
     name: yup.string().required(MSG.NAMEREQ),
@@ -573,5 +586,6 @@ export {
     schemaLeadAddress,
     schemaSiteVisitEdit,
     schemaDailyTaskInfo,
-    schemaTableEdit
+    schemaTableEdit,
+    schemaBookingEdit
 }

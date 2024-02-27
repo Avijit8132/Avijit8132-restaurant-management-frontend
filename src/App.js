@@ -60,6 +60,7 @@ import TableEdit from "./components/Table/TableEdit";
 import TableView from "./components/Table/TableView";
 import BookingList from "./components/Booking/BookingList";
 import BookingView from "./components/Booking/BookingView";
+import BookingEdit from "./components/Booking/BookingEdit";
 // import BookingEdit from "./components/Booking/BookingEdit";
 
 function App() {
@@ -881,6 +882,34 @@ function App() {
                   <div id="content">
                     <Header />
                     <TableEdit />
+                  </div>
+                </div>
+              </>
+            }
+          />
+          <Route
+            path="/booking/e"
+            element={
+              <>
+                <div className="wrapper">
+                  <Sidebar />
+                  <div id="content">
+                    <Header />
+                    <BookingEdit />
+                  </div>
+                </div>
+              </>
+            }
+          />
+            <Route
+            path="/bookings/:id/e"
+            element={
+              <>
+                <div className="wrapper">
+                  <Sidebar />
+                  <div id="content">
+                    <Header />
+                    <BookingEdit />
                   </div>
                 </div>
               </>

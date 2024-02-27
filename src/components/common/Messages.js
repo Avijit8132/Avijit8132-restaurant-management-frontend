@@ -28,5 +28,9 @@ export const MSG = {
     FLOORREQ: "Floor is required",
     occupancyREQ:"Occupancy is required",
     VALIDNOREQ: "occupancy should contain only number",
-    TYPEREQ :"Type is required"
+    TYPEREQ :"Type is required",    
+    CONREQ :"Contact is required", 
+    TABLEREQ :"Contact is required", 
+    NUUMBEREREQ :"Number of person is required is required", 
+
 };

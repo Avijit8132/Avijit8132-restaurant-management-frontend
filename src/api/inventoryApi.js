@@ -2227,7 +2227,7 @@ async fetchBooking(id) {
 
  async createBooking(booking) {
   ////.log('if contact create call');
-  ////.log(contact);
+  console.log("inside createBooking --> ",booking);
   const token = localStorage.getItem("token");
 
   let response = await fetch(constants.API_BASE_URL + "/api/bookings", {

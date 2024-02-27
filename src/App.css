@@ -66,9 +66,9 @@ footer a {
 
 .btn-primary,
 .btn-info {
-  background-color:RGB(227, 30, 36) !important;
+  background-color:#000000 !important;
   color: #fff !important;
-  border-color: RGB(227, 30, 36)
+  border-color: #000000
   !important;
 }
 
