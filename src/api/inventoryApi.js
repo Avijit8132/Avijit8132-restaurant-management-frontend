@@ -60,23 +60,6 @@ const inventoryApi = {
 
     return result;
   },
-  async fetchAttendanceById(id) {
-    //.log(id);
-    const token = localStorage.getItem("token");
-    let response = await fetch(constants.API_BASE_URL + "/api/attendance/" + id, {
-      method: "GET",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    });
-    const result = await response.json();
-
-    return result;
-  },
-
 
   async createUser(user) {
     const token = localStorage.getItem("token");
@@ -129,58 +112,6 @@ const inventoryApi = {
       //.log('result',result)
        return result;
     
-  },
-
-  async deleteMessage(id) {
-    const token = localStorage.getItem("token");
-    let response = await fetch(constants.API_BASE_URL + "/api/messages/" + id, {
-      method: "DELETE",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-    });
-
-    return await response.json();
-  },
-  async createMessage(message) {
-    const token = localStorage.getItem("token");
-    let response = await fetch(constants.API_BASE_URL + "/api/messages/", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-      body: JSON.stringify(message),
-    });
-
-    return await response.json();
-  },
-  async fetchMessages(pid) {
-    const token = localStorage.getItem("token");
-    ///"+pid+"/*
-    let response = await fetch(
-      constants.API_BASE_URL + "/api/messages/" + pid + "/*",
-      {
-        method: "GET",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-      }
-    );
-    ////.log(response)
-    const result = await response.json();
-    ////.log(result);
-    if (result.length > 0) {
-      ////.log(result)
-      return result;
-    }
-    return null;
   },
 
   async fetchUnreadMessages() {

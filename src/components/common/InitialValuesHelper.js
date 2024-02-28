@@ -13,7 +13,7 @@ function bookingEditInitialValues(booking) {
   return {
     id: booking.id,
     contactid: booking.contactid,
-    occupancy: booking.tableid,
+    tableid: booking.tableid,
     numberofperson: booking.numberofperson,
   };
 }

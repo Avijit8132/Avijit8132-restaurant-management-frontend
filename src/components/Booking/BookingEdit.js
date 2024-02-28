@@ -44,7 +44,11 @@ const BookingEdit = (props) => {
       const contacts = await inventoryApi.fetchContacts();
       if (contacts && contacts.length) {
         setContactList(contacts);
-        setDefaultContact([{ id: "", contactname: "" }]);
+
+        setDefaultContact(contacts.filter((contact, index) => {
+          return bookings.contactid === contact.id
+        }))
+        // setDefaultContact([{ id: "", contactname: "" }]);
       } else {
         // setBody([]);
       }
@@ -53,7 +57,9 @@ const BookingEdit = (props) => {
       console.log("tables --> ",tables);
       if (tables && tables.length) {
         setTableList(tables);
-        setDefaultTable([{ id: "", name: "" }]);
+        setDefaultTable(tables.filter((table, index) => {
+          return bookings.tableid === table.id
+        }))
       } else {
         // setBody([]);
       }
@@ -98,7 +104,7 @@ const BookingEdit = (props) => {
           title: "Record Saved",
           message: "Record saved successfully",
         });
-        navigate(`/bookings/${result2.id}`, { state: result2 });
+        navigate(`/bookings/${result2.booking.id}`, { state: result2.booking });
       }
     } else {
       result2 = await inventoryApi.createBooking(values);
@@ -111,6 +117,35 @@ const BookingEdit = (props) => {
       }
     }
   };
+
+  // const handleSubmitSave = async (values) => {
+  //   console.log("inside save");
+  
+  //   //========= Logic to perform Create or Edit ======
+  //   let result2 = {};
+  //   if (location.state && location.state.id) {
+  //     values.id = location.state.id; // Set the id from location.state
+  //     result2 = await inventoryApi.saveBooking(values);
+  //     console.log("result", result2);
+  //     if (result2) {
+  //       PubSub.publish("RECORD_SAVED_TOAST", {
+  //         title: "Record Saved",
+  //         message: "Record saved successfully",
+  //       });
+  //       navigate(`/bookings/${result2.id}`, { state: result2 });
+  //     }
+  //   } else {
+  //     result2 = await inventoryApi.createBooking(values);
+  //     if (result2) {
+  //       PubSub.publish("RECORD_SAVED_TOAST", {
+  //         title: "Record Saved",
+  //         message: "Record saved successfully",
+  //       });
+  //       navigate(`/bookings/${result2.id}`, { state: result2 });
+  //     }
+  //   }
+  // };
+  
 
   const handleCancel = () => {
     if (bookings.id)  navigate("/bookings/" + bookings.id, { state: bookings });
@@ -131,7 +166,7 @@ const BookingEdit = (props) => {
         ></CustomSeparator>
       ) : (
         <CustomSeparator
-          cmpListName="Table"
+          cmpListName="Booking"
           currentCmpName="Create"
           indexLength="2"
           url="/bookings"

@@ -29,39 +29,20 @@ import ReportList from "./components/ReportList";
 import PubSub from "pubsub-js";
 import { Toast, ToastContainer } from "react-bootstrap";
 import jwt_decode from "jwt-decode";
-import Attendance from "./components/attendance/Attendance";
-import MyDocument from "./components/MyDocument";
-import LeadList from "./components/lead/LeadList";
-import LeadEdit from "./components/lead/LeadEdit";
-import LeadView from "./components/lead/LeadView";
 import ContactList from "./components/contact/ContactList";
 import ContactView from "./components/contact/ContactView";
 import ContactEdit from "./components/contact/ContactEdit";
-import SiteVisitList from "./components/siteVisit/SiteVisitList";
-import SiteVisitEdit from "./components/siteVisit/SiteVisitEdit";
-import SiteVisitView from "./components/siteVisit/SiteVisitView";
-import DailyTaskList from "./components/dailyTask/DailyTaskList";
-import DailyTaskEdit from "./components/dailyTask/DailyTaskEdit";
-import DailyTaskView from "./components/dailyTask/DailyTaskView";
-import Calendar from "./components/meeting/Calendar";
 import UserEdit from "./components/user/UserEdit";
 import UserList from "./components/user/UserList";
 import UserView from "./components/user/UserView";
-import SalePurchaseList from "./components/SalePurchaseList";
-import OldLeadList from "./components/csv/OldLeadList";
-import OldLeadView from "./components/csv/OldLeadView";
-import LeadTaskList from "./components/LeadTaskList";
 import PdfBuilder from "./components/PdfBuilder/PdfBuilder";
 import data from "./components/NewJson";
-import EnquirytableList from "./components/Enquirytable/EnquirytableList";
-import EnquirytableView from "./components/Enquirytable/EnquirytableView";
 import TableList from "./components/Table/TableList";
 import TableEdit from "./components/Table/TableEdit";
 import TableView from "./components/Table/TableView";
 import BookingList from "./components/Booking/BookingList";
 import BookingView from "./components/Booking/BookingView";
 import BookingEdit from "./components/Booking/BookingEdit";
-// import BookingEdit from "./components/Booking/BookingEdit";
 
 function App() {
   const [modalShow, setModalShow] = useState(false);
@@ -184,35 +165,7 @@ function App() {
             }
           />
 
-          <Route
-            path="/meetings"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <Calendar />
-                  </div>
-                </div>
-              </>
-            }
-          />
-          {/* add wazid */}
-          <Route
-            path="/meetings/:today"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <Calendar />
-                  </div>
-                </div>
-              </>
-            }
-          />
+
 
           <Route
             path="orders/:id/pdf"
@@ -240,21 +193,7 @@ function App() {
               </>
             }
           />
-          {/********My Document*******/}
-          {/* <Route
-            path="/mydoucoment/:id"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <MyDocument />
-                  </div>
-                </div>
-              </>
-            }
-          /> */}
+
            <Route
             path="/pdfbuilder/:id"
             element={
@@ -306,61 +245,6 @@ function App() {
           />
 
           <Route
-            path="/leads"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    {permissions &&
-                    (permissions.indexOf(constants.VIEW_LEAD) >= 0 ||
-                      permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
-                      <LeadList />
-                    ) : (
-                      "You have no permission to access lead"
-                    )}
-                  </div>
-                </div>
-              </>
-            }
-          />
-          <Route
-            path="/leadTaskList"
-            element={
-              <>
-                <div class="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <LeadTaskList/>
-                  </div>
-                </div>
-              </>
-            }
-          />
-          <Route
-            path="/properties"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    {permissions &&
-                    (permissions.indexOf(constants.VIEW_PROPERTY) >= 0 ||
-                      permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
-                      <PropertyList />
-                    ) : (
-                      "You have no permission to access property"
-                    )}
-                  </div>
-                </div>
-              </>
-            }
-          />
-
-          <Route
             path="/changepassword"
             element={
               <>
@@ -380,52 +264,6 @@ function App() {
               </>
             }
           />
-
-          <Route
-            path="properties/:id"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <PropertyView />
-                  </div>
-                </div>
-              </>
-            }
-          />
-
-          <Route
-            path="/properties/:id/e"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <PropertyEdit />
-                  </div>
-                </div>
-              </>
-            }
-          />
-
-          <Route
-            path="/properties/e"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <PropertyEdit />
-                  </div>
-                </div>
-              </>
-            }
-          />
-
           <Route
             path="contacts/:id/e"
             element={
@@ -435,21 +273,6 @@ function App() {
                   <div id="content">
                     <Header />
                     <ContactEdit />
-                  </div>
-                </div>
-              </>
-            }
-          />
-
-          <Route
-            path="/leads/e"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <LeadEdit />
                   </div>
                 </div>
               </>
@@ -471,37 +294,7 @@ function App() {
             }
           />
 
-          <Route
-            path="leads/:id"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <LeadView />
-                  </div>
-                </div>
-              </>
-            }
-          />
 
-          {/* ************Backup ********************/}
-
-          <Route
-            path="leads/:id/e"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <LeadEdit />
-                  </div>
-                </div>
-              </>
-            }
-          />
 
           <Route
             path="reports/:id"
@@ -588,277 +381,8 @@ function App() {
             }
           />
 
-          <Route
-            path="/attendance"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <Attendance />
-                  </div>
-                </div>
-              </>
-            }
-          />
 
-          <Route
-            path="/dailytasklist"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <DailyTaskList />
-                  </div>
-                </div>
-              </>
-            }
-          />
 
-          <Route
-            path="/dailytasklist/:id/e"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <DailyTaskEdit />
-                  </div>
-                </div>
-              </>
-            }
-          />
-
-          <Route
-            path="/dailytasklist/e"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <DailyTaskEdit />
-                  </div>
-                </div>
-              </>
-            }
-          />
-
-          <Route
-            path="dailytasklist/:id"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <DailyTaskView />
-                  </div>
-                </div>
-              </>
-            }
-          />
-
-          <Route
-            path="/Todo"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <ToDoList></ToDoList>
-                  </div>
-                </div>
-              </>
-            }
-          />
-
-          <Route
-            path="/TodoNew"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <ToDoCreate></ToDoCreate>
-                  </div>
-                </div>
-              </>
-            }
-          />
-
-          <Route
-            path="/TodoView/:id"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <ToDoView />
-                  </div>
-                </div>
-              </>
-            }
-          />
-
-          <Route
-            path="/Todoedit/:id/e"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <TodoEdit></TodoEdit>
-                  </div>
-                </div>
-              </>
-            }
-          />
-
-          {/* /********* Income/Expense *********/}
-          <Route
-            path="/transactions"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <SalePurchaseList />
-                  </div>
-                </div>
-              </>
-            }
-          />
-          {/* /********* Data Mining *********/}
-          <Route
-            path="/importdata"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                   <OldLeadList/>
-                  </div>
-                </div>
-              </>
-            }
-          />
-          <Route
-            path="oldlead/:id"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <OldLeadView/>
-                  </div>
-                </div>
-              </>
-            }
-          />
-
-          {/******** Site Visit *******/}
-
-          <Route
-            path="/sitevisit"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <SiteVisitList />
-                  </div>
-                </div>
-              </>
-            }
-          />
-
-          <Route
-            path="/sitevisit/e"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <SiteVisitEdit />
-                  </div>
-                </div>
-              </>
-            }
-          />
-
-          <Route
-            path="sitevisit/:id"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <SiteVisitView />
-                  </div>
-                </div>
-              </>
-            }
-          />
-
-          <Route
-            path="sitevisit/:id/e"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <SiteVisitEdit />
-                  </div>
-                </div>
-              </>
-            }
-          />
-
-           {/* /*********Enquiry Table *********/}
-           <Route
-            path="/enquiry"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                   <EnquirytableList></EnquirytableList>
-                  </div>
-                </div>
-              </>
-            }
-          />
-           <Route
-              path="enquiry/:id"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                    <EnquirytableView></EnquirytableView>
-                  </div>
-                </div>
-              </>
-            }
-          />
     <Route
             path="/tables/:id/e"
             element={

@@ -103,7 +103,7 @@ const Sidebar = () => {
             >
               <Link to="/tables">
                 {" "}
-                <i  className={`fa-solid fa-building mx-2`}></i><span className={`fa-solid mx-2 ${location.pathname.includes("/tables") ? "active" : "inactive"}`}>Table</span>
+                <i  className={`fa-solid fa-table mx-2`}></i><span className={`fa-solid mx-2 ${location.pathname.includes("/tables") ? "active" : "inactive"}`}>Table</span>
               </Link>
             </li>
           ) : (
@@ -120,7 +120,7 @@ const Sidebar = () => {
             >
               <Link to="/bookings">
                 {" "}
-                <i  className={`fa-solid fa-building mx-2`}></i><span className={`fa-solid mx-2 ${location.pathname.includes("/bookings") ? "active" : "inactive"}`}>Booking</span>
+                <i  className={`fa-solid fa-bell mx-2`}></i><span className={`fa-solid mx-2 ${location.pathname.includes("/bookings") ? "active" : "inactive"}`}>Booking</span>
               </Link>
             </li>
           ) : (

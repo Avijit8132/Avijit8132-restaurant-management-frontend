@@ -754,16 +754,16 @@ form-file-upload {
 }
 
 button.btn-sm.btn.btn-outline-primary {
-  background-color: RGB(227, 30, 36) !important;
+  background-color: black !important;
   color: white !important;
   font-weight: 600 !important;
-  border: RGB(227, 30, 36) 0.5px solid !important;
+  border: black 0.5px solid !important;
 }
 
 button.btn-sm.btn.btn-outline-primary:hover {
-  background: RGB(227, 30, 36) !important;
+  background: #B4D3C4 !important;
     color: #1a1a1a !important;
-    border: RGB(227, 30, 36) 0.5px solid !important;
+    border: black 0.5px solid !important;
 }
 
 
