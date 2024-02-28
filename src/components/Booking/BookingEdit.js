@@ -56,7 +56,9 @@ const BookingEdit = (props) => {
       const tables = await inventoryApi.fetchTable();
       console.log("tables --> ",tables);
       if (tables && tables.length) {
-        setTableList(tables);
+        setTableList(tables.filter((table) => {
+          return table.status === "open"
+        }));
         setDefaultTable(tables.filter((table, index) => {
           return bookings.tableid === table.id
         }))

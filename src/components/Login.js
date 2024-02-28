@@ -76,7 +76,7 @@ const Login = () => {
         <Col lg={6} className="login-section">
           <h3 className="text-center mb-2 pt-5">
 
-            <img src="/sthapathya-logo.png" style={{width: "200px"}}/>
+            <img src="/aa.png" style={{width: "200px"}}/>
           </h3>
           <div className="p-4">
             <Form onSubmit={handleSubmit}>
