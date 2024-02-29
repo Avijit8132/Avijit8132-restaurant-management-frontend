@@ -42,51 +42,25 @@ const Sidebar = () => {
           className="list-unstyled components"
           style={{ borderTop: "1px solid #ddd" }}
         >
-          {/* <li className={`${
-                location.pathname.charAt(location.pathname.length - 1).includes("/") ? "active" : ""
-              }`}>
-            <Link to="/" >
-              {" "}
-              <i className="fa-solid fa-house mx-2 " ></i> Home
-            </Link>
-          </li> */}
+         
            <li className={`${location.pathname.charAt(location.pathname.length - 1).includes("/") ? "active" : ""}`}>
               <Link to="/">
                 {" "}
-                <i  className={`fa-solid fa-house mx-2 ${location.pathname.charAt(location.pathname.length - 1).includes("/") ? "active" : "inactive"}`} ></i> Home
+                <i  className={`fa-solid fa-house mx-2`}></i><span className={`fa-solid mx-2 ${location.pathname.includes("/") ? "active" : "inactive"}`}>Home</span>
+                {/* <i  className={`fa-solid fa-house mx-2 ${location.pathname.charAt(location.pathname.length - 1).includes("/") ? "active" : "inactive"}`} ></i> Home */}
               </Link>
             </li>
      
-          {/* {permissions &&
-          (permissions.indexOf(constants.VIEW_LEAD) >= 0 ||
-            permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
-              <li className={`${location.pathname.includes("/leads") ? "active" : ""}`}>
-              <Link to="/leads">
-                {" "}
-                <i className={`fa-solid fa-bolt mx-2 ${location.pathname.includes("/leads") ? "active" : "inactive"}`} ></i> Leads
-              </Link>
-            </li>
-          ) : (
-            ""
-          )} */}
           
           {permissions &&
           (permissions.indexOf(constants.VIEW_CONTACT) >= 0 ||
             permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
-            // <li
-            //   className={`${
-            //     location.pathname.includes("/contacts") ? "active" : ""
-            //   }`}
-            // >
-            //   <Link to="/contacts">
-            //     {" "}
-            //     <i className="fa-solid fa-address-book mx-2"></i> Contacts
-            //   </Link>
-            // </li>
+        
             <li className={`${location.pathname.includes("/contacts") ? "active" : ""}`}>
             <Link to="/contacts">
               {" "}
-              <i  className={`fa-solid fa-address-book mx-2 ${location.pathname.includes("/contacts") ? "active" : "inactive"}`}></i> Contacts
+              <i  className={`fa-solid fa-address-book mx-2`}></i><span className={`fa-solid mx-2 ${location.pathname.includes("/contacts") ? "active" : "inactive"}`}>Contacts</span>
+              {/* <i  className={`fa-solid fa-address-book mx-2 ${location.pathname.includes("/contacts") ? "active" : "inactive"}`}></i> Contacts */}
             </Link>
           </li>
           ) : (
@@ -136,28 +110,14 @@ const Sidebar = () => {
             >
               <Link to="/users">
                 {" "}
-                <i className={`fa-solid fa-user mx-2 ${location.pathname.includes("/users") ? "active" : "inactive"}`} > </i> Users
+                <i  className={`fa-solid fa-user mx-2`}></i><span className={`fa-solid mx-2 ${location.pathname.includes("/users") ? "active" : "inactive"}`}>Users</span>
+                {/* <i className={`fa-solid fa-user mx-2 ${location.pathname.includes("/users") ? "active" : "inactive"}`} > </i> Users */}
               </Link>
             </li>
           ) : (
             ""
           )}
 
-          {/* {permissions &&
-          (permissions.indexOf(constants.MODIFY_ALL) >= 0) ? (
-            <li
-              className={`${
-                location.pathname.includes("/reports") ? "active" : ""
-              }`}
-            >
-              <Link to="/reports">
-                {" "}
-                <i className={`fa-solid fa-chart-simple mx-2 ${location.pathname.includes("/reports") ? "active" : "inactive"}`}> </i> Reports
-              </Link>
-            </li>
-          ) : (
-            ""
-          )} */}
  
           <li
             className={`${
@@ -166,7 +126,8 @@ const Sidebar = () => {
           >
             <Link to="/myprofile">
               {" "}
-              <i className={`fa fa-user-circle mx-2 ${location.pathname.includes("/myprofile") ? "active" : "inactive"}`} ></i>My Profile
+              <i  className={`fa fa-user-circle mx-2`}></i><span className={`fa-solid mx-2 ${location.pathname.includes("/myprofile") ? "active" : "inactive"}`}>My Profile</span>
+              {/* <i className={`fa fa-user-circle mx-2 ${location.pathname.includes("/myprofile") ? "active" : "inactive"}`} ></i>My Profile */}
             </Link>
           </li>
 
