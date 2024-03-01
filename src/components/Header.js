@@ -40,8 +40,6 @@ const Header = (props) => {
   }, []);
 
   useEffect(() => {
-    ////.log("@@myimage " , localStorage.getItem("myimage"))
-    //setUserImage(localStorage.getItem("myimage"));
     var dataImage = localStorage.getItem("myimage");
     let bannerImg = document.getElementById("profileimage");
     if (localStorage.getItem("myimage") !== "/img_avatar.png") {
