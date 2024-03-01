@@ -7,11 +7,8 @@ import Header from "./components/Header";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./components/Login";
 import Home from "./components/Home";
-import { AccordionCollapse, Container } from "react-bootstrap";
-import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
 import React, { useEffect, useState } from "react";
-
 import EditProfile from "./components/EditProfile";
 import * as constants from "./constants/CONSTANT";
 import ChangePassword from "./components/ChangePassword";
@@ -26,7 +23,6 @@ import ContactEdit from "./components/contact/ContactEdit";
 import UserEdit from "./components/user/UserEdit";
 import UserList from "./components/user/UserList";
 import UserView from "./components/user/UserView";
-import data from "./components/NewJson";
 import TableList from "./components/Table/TableList";
 import TableEdit from "./components/Table/TableEdit";
 import TableView from "./components/Table/TableView";
@@ -154,20 +150,6 @@ function App() {
               </>
             }
           />
-
-
-
-          <Route
-            path="orders/:id/pdf"
-            element={
-              <>
-                <div className="wrapper">
-                  <div id="content"></div>
-                </div>
-              </>
-            }
-          />
-
           {/******** Edit Profile *******/}
           <Route
             path="/myprofile"
