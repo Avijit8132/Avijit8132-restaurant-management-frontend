@@ -27,9 +27,9 @@ const Home = () => {
 
   // Define a mapping of status values to colors
   const statusColors = {
-    "open": "#377980",
-    "running": "#008000",
-    "reserved": "#B2BEB5",
+    "open": "#238823",
+    "running": "#0067A5",
+    "reserved": "#D2222D",
    
   };
 
