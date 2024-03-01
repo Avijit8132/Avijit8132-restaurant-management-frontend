@@ -13,16 +13,7 @@ import Sidebar from "./components/Sidebar";
 import React, { useEffect, useState } from "react";
 
 import EditProfile from "./components/EditProfile";
-import ToDoList from "./components/ToDoFiles/ToDoList";
-import ToDoCreate from "./components/ToDoFiles/ToDoCreate";
-import ToDoView from "./components/ToDoFiles/ToDoView";
-import TodoEdit from "./components/ToDoFiles/TodoEdit";
-
-import PropertyList from "./components/inventory/PropertyList";
-
 import * as constants from "./constants/CONSTANT";
-import PropertyView from "./components/inventory/PropertyView";
-import PropertyEdit from "./components/inventory/PropertyEdit";
 import ChangePassword from "./components/ChangePassword";
 import ReportView from "./components/ReportView";
 import ReportList from "./components/ReportList";
@@ -35,7 +26,6 @@ import ContactEdit from "./components/contact/ContactEdit";
 import UserEdit from "./components/user/UserEdit";
 import UserList from "./components/user/UserList";
 import UserView from "./components/user/UserView";
-import PdfBuilder from "./components/PdfBuilder/PdfBuilder";
 import data from "./components/NewJson";
 import TableList from "./components/Table/TableList";
 import TableEdit from "./components/Table/TableEdit";
@@ -188,21 +178,6 @@ function App() {
                   <div id="content">
                     <Header />
                     <EditProfile />
-                  </div>
-                </div>
-              </>
-            }
-          />
-
-           <Route
-            path="/pdfbuilder/:id"
-            element={
-              <>
-                <div className="wrapper">
-                  <Sidebar />
-                  <div id="content">
-                    <Header />
-                   <PdfBuilder propertyData={data} />
                   </div>
                 </div>
               </>

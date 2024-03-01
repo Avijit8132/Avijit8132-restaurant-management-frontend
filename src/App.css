@@ -818,7 +818,7 @@ select:disabled{
 .table-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Adjust the gap between boxes as needed */
+  gap: 20px;
 }
 
 .table-box {
@@ -826,10 +826,10 @@ select:disabled{
   padding: 20px;
   border-radius: inherit;
   border-radius: 5px;
-  width: calc(16.16% - 20px); /* Adjust the width of each box based on your layout */
+  width: calc(16.16% - 20px);
   box-sizing: border-box;
-  transition: background-color 0.3s; /* Smooth transition effect */
-  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s;
+  cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.8) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
@@ -841,5 +841,6 @@ select:disabled{
   margin: 0;
 }
 .table-box:hover {
-  background-color: #19766d; /* Change background color on hover */
+  background-color: #19766d;
+
 }
