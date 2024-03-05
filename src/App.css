@@ -823,7 +823,7 @@ select:disabled{
 
 .table-box {
   background-color: #069281;
-  padding: 20px;
+  /* padding: 20px; */
   border-radius: inherit;
   border-radius: 5px;
   width: calc(16.16% - 20px);

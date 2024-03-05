@@ -40,8 +40,8 @@ const Home = () => {
         {tables.map((table, index) => (
           <div 
             key={index} 
-            className="table-box" 
-            style={{ backgroundColor: statusColors[table.status] || "#ffffff" }} // Apply background color dynamically based on status
+            className="table-box p-4" 
+            style={{ backgroundColor: statusColors[table.status] || "#ffffff" }} 
           >
             <h2>{table.name}</h2>
             {/* Headers */}

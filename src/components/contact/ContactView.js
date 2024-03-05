@@ -186,42 +186,6 @@ const ContactView = (props) => {
                   <label>Phone</label>
                   <span>{contact.phone}</span>
                 </Col>
-                {/* <Col lg={6}>
-                  <label>Street</label>
-                  <span>{contact.street}</span>
-                </Col>
-                <Col lg={6}>
-                  <label>City</label>
-                  <span>{contact.city}</span>
-                </Col>
-                <Col lg={6}>
-                  <label>State</label>
-                  <span>{contact.state}</span>
-                </Col>
-                <Col lg={6}>
-                  <label>Pincode</label>
-                  <span>{contact.pincode}</span>
-                </Col>
-                <Col lg={6}>
-                  <label>Country</label>
-                  <span>{contact.country}</span>
-                </Col> */}
-                <Col lg={6}>
-                  <label>Created By</label>
-                  <span>{contact.createdbyname}</span>
-                </Col>
-                <Col lg={6}>
-                  <label>Created date </label>
-                  <span>{moment(contact.createddate).format("DD-MM-YYYY hh:mm A")}</span>
-                </Col>
-                <Col lg={6}>
-                  <label>Last modifieddate</label>
-                  <span>{moment(contact.lastmodifieddate).format("DD-MM-YYYY hh:mm A")}</span>
-                </Col>
-                <Col lg={6}>
-                  <label>lastmodifieddateby</label>
-                  <span>{contact.lastmodifiedbyname}</span>
-                </Col>
               </Row>
             </Col>
             <Col></Col>
